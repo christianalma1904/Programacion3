@@ -1,43 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Table</title>
+  <meta charset="UTF-8">
+  <title>Web de Decisiones Interactivas</title>
 </head>
 <body>
+  <!-- Formulario para ingreso de datos -->
+  <h2>Ingresa tu Escenario</h2>
+  <form action="/enviar" method="post">
+    <label for="escenario">Escenario:</label><br>
+    <input type="text" id="escenario" name="escenario" placeholder="Describe tu situación" required><br><br>
 
-    <h1>Simulador de decisiones importantes</h1>
+    <label for="probabilidad">Probabilidad (%):</label><br>
+    <input type="number" id="probabilidad" name="probabilidad" min="0" max="100" placeholder="0-100" required><br><br>
 
-    <table border="1">
-        <thead>
-          <tr>
-            <th>Escenario</th>
-            <th>Probabilidad</th>
-            <th>Opinión de Usuarios</th>
-            <th>Decisión Sugerida</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Escenario 1: Comprar una casa</td>
-            <td>70% de éxito</td>
-            <td>80% recomienda evaluar el mercado primero</td>
-            <td>Analizar precios antes de decidir</td>
-          </tr>
-          <tr>
-            <td>Escenario 2: Cambiar de trabajo</td>
-            <td>50% de mejora salarial</td>
-            <td>60% sugiere buscar estabilidad</td>
-            <td>Comparar beneficios a largo plazo</td>
-          </tr>
-          <tr>
-            <td>Escenario 3: Viajar al extranjero</td>
-            <td>90% de disfrute</td>
-            <td>95% aprueba con buena planificación</td>
-            <td>Planificar con anticipación</td>
-          </tr>
-        </tbody>
-      </table>
+    <label for="opinion">Tu Opinión:</label><br>
+    <textarea id="opinion" name="opinion" rows="4" cols="50" placeholder="¿Qué piensas al respecto?" required></textarea><br><br>
+
+    <input type="submit" value="Enviar">
+  </form>
+
+  <!-- Tabla con información -->
+  <h2>Escenarios Analizados</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Escenario</th>
+        <th>Probabilidad</th>
+        <th>Opinión de Usuarios</th>
+        <th>Decisión Sugerida</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Escenario 1: Comprar una casa</td>
+        <td>70% de éxito</td>
+        <td>80% recomienda evaluar el mercado primero</td>
+        <td>Analizar precios antes de decidir</td>
+      </tr>
+      <tr>
+        <td>Escenario 2: Cambiar de trabajo</td>
+        <td>50% de mejora salarial</td>
+        <td>60% sugiere buscar estabilidad</td>
+        <td>Comparar beneficios a largo plazo</td>
+      </tr>
+      <tr>
+        <td>Escenario 3: Viajar al extranjero</td>
+        <td>90% de disfrute</td>
+        <td>95% aprueba con buena planificación</td>
+        <td>Planificar con anticipación</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>
