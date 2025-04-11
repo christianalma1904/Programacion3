@@ -1,0 +1,15 @@
+div p{
+    color: #0f0;
+}
+
+ul > li{
+    color: #f00;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+input[text]{
+    border: 1px solid #000;
+}
