@@ -1,155 +1,60 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
+    background-color: #f0f0f0;
 }
 
-header {
-    background-color: #007bff;
+.header {
+    background-color: #4CAF50;
     color: white;
     text-align: center;
-    padding: 2rem;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
-
-header p {
-    font-size: 1.2rem;
-}
-
-main {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 20px;
 }
 
-section {
-    margin-bottom: 40px;
+h1 {
+    margin: 0;
 }
 
 h2 {
-    color: #007bff;
-    font-size: 1.8rem;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-}
-
-.scenarios {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.scenario-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.scenario-card h3 {
-    margin-top: 0;
     color: #333;
 }
 
-.scenario-card button {
-    background-color: #28a745;
+.main {
+    margin: 20px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+p {
+    color: #555;
+}
+
+button {
+    background-color: #008CBA;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.scenario-card button:hover {
-    background-color: #218838;
-}
-
-.probabilities {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.probability-tool {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.probability-tool label {
-    font-weight: bold;
-}
-
-.probability-tool input {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+    border: none;
+    cursor: pointer;
 }
 
-.probability-tool button {
-    background-color: #007bff;
-    color: white;
-    border: none;
+button:hover {
+    background-color: #005f73;
+}
+
+input {
     padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+    width: 200px;
 }
 
-.probability-tool button:hover {
-    background-color: #0056b3;
-}
-
-.result {
-    font-style: italic;
-    color: #666;
-}
-
-.opinions {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.opinion-card {
-    background-color: #f8f9fa;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-.share-opinion {
-    background-color: #ffc107;
-    color: #333;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.share-opinion:hover {
-    background-color: #e0a800;
-}
-
-footer {
+.footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 1rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 10px;
+}
+
+.footer p{
+  color: #fff;
 }
