@@ -6,7 +6,7 @@
 </head>
 
   <h2>Ingresa tu Escenario</h2>
-  <form action="enviar" method="post">
+  <form action="enviar" method="">
     <label for="escenario">Escenario:</label><br>
     <input type="text" id="escenario" name="escenario" placeholder="Describe tu situación" required><br><br>
 
@@ -14,22 +14,22 @@
     <input type="number" id="probabilidad" name="probabilidad" min="0" max="100" placeholder="0-100" required><br><br>
 
     <label for="opinion">Tu Opinión:</label><br>
-    <textarea id="opinion" name="opinion" rows="4" cols="50" placeholder="¿Qué piensas al respecto?" required></textarea><br><br>
+    <textarea id="opinion" name="opinion" rows="4" cols="50" placeholder="¿Qué piensas al respecto?"></textarea><br><br>
 
     <input type="submit" value="Enviar">
   </form>
 
   <h2>Escenarios Analizados</h2>
   <table border="1">
-    <thead>
+    <th>
       <tr>
         <th>Escenario</th>
         <th>Probabilidad</th>
         <th>Opinión de Usuarios</th>
         <th>Decisión Sugerida</th>
       </tr>
-    </thead>
-    <tbody>
+    </th>
+    <tb>
       <tr>
         <td>Escenario 1: Comprar una casa</td>
         <td>70% de éxito</td>
@@ -48,7 +48,7 @@
         <td>95% aprueba con buena planificación</td>
         <td>Planificar con anticipación</td>
       </tr>
-    </tbody>
+    </tb>
   </table>
 </body>
 </html>
