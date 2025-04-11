@@ -6,10 +6,14 @@ ul > li{
     color: #f00;
 }
 
+a{
+    text-decoration: none;
+}
+
 a:hover{
     text-decoration: underline;
 }
 
-input[text]{
+input[type="text"]{
     border: 1px solid #000;
 }
