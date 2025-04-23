@@ -19,7 +19,6 @@ function elegirOpcion(opcion) {
         resultado.textContent = "Saliendo...";
         seguir = false;
 
-        // Conteo regresivo con for
         setTimeout(() => {
         for (let i = 3; i > 0; i--) {
             setTimeout(() => {
