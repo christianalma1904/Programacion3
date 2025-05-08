@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simulador de Opiniones</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    input { padding: 5px; }
+  </style>
+</head>
+<body>
+
+  <h1>Opiniones de Usuarios</h1>
+
+  <input type="text" id="opinionInput" placeholder="Escribe tu opinión">
+  <button onclick="agregarOpinion()">Agregar</button>
+
+  <h2>Lista de Opiniones</h2>
+  <ul id="listaOpiniones"></ul>
+
+  <script>
+    let opiniones = {
+      lista: [],
+      agregar(opinion) {
+        this.lista.push(opinion);
+      },
+      mostrar() {
+        let listaHTML = this.lista.map(op => `<li>${op}</li>`).join('');
+        document.getElementById("listaOpiniones").innerHTML = listaHTML;
+      }
+    };
+
+    function agregarOpinion() {
+      let nuevaOpinion = document.getElementById("opinionInput").value;
+      if(nuevaOpinion.trim() !== "") {
+        opiniones.agregar(nuevaOpinion);
+        opiniones.mostrar();
+        document.getElementById("opinionInput").value = "";
+      }
+    }
+  </script>
+
+</body>
+</html>

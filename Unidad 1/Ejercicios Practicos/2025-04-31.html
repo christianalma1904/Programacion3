@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simulador de Decisiones - POO</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+  </style>
+</head>
+<body>
+
+  <h1>Simulador de Decisiones (POO)</h1>
+  <button onclick="ejecutarSimulacion()">Simular</button>
+  <p id="output"></p>
+
+  <script>
+    //Abstraccion
+    class Decision {
+      constructor(nombre) {
+        this.nombre = nombre;
+      }
+      analizar() {
+        throw "Método abstracto. Debe ser implementado";
+      }
+    }
+
+    //Herencia
+    class DecisionFacil extends Decision {
+      analizar() {
+        return `${this.nombre}: ¡Esto es fácil, hazlo!`;
+      }
+    }
+
+    class DecisionDificil extends Decision {
+      analizar() {
+        return `${this.nombre}: Es complicado, piensa bien antes.`;
+      }
+    }
+
+    //Polimorfismo y sobrecarga
+    function ejecutarSimulacion() {
+      let decision1 = new DecisionFacil("Comprar un helado");
+      let decision2 = new DecisionDificil("Cambiar de carrera");
+
+      let resultados = [
+        decision1.analizar(),
+        decision2.analizar()
+      ];
+
+      document.getElementById("output").innerHTML = resultados.join("<br>");
+    }
+  </script>
+</body>
+</html>

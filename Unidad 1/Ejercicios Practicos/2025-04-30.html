@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simulador de Decisiones</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    button { padding: 10px 20px; font-size: 16px; }
+    #resultado { margin-top: 20px; font-size: 20px; color: green; }
+  </style>
+</head>
+<body>
+
+  <h1>¿Qué decisión tomar?</h1>
+  <button id="decidirBtn">Decidir por mí</button>
+  <div id="resultado"></div>
+
+  <script>
+    const decisiones = ["Sí", "No", "Tal vez", "Inténtalo más tarde"];
+
+    document.getElementById("decidirBtn").addEventListener("click", () => {
+      let aleatorio = Math.floor(Math.random() * decisiones.length);
+      document.getElementById("resultado").textContent = `Decisión: ${decisiones[aleatorio]}`;
+    });
+  </script>
+
+</body>
+</html>

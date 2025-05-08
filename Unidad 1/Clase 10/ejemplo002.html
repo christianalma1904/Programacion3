@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model - DOM</title>
+</head>
+<body>
+    <div id="container" style="position:relative; width:100%; height:400px; background:whitesmoke; margin-top:20px;">
+    <div id="circulo" style="width:80px; height:80px; background:red; border-radius:50%; position:absolute; top:100px; left:100px;"></div>
+</div>
+<script>
+    //Circulo que se mueve por la pantalla
+    const circulo = document.getElementById('circulo');
+    let colores = ['red', 'green', 'blue', 'orange', 'purple', 'pink'];
+    let colorActual = 0;
+    let arrastrando = false;
+    function cambiarColor() {
+        colorActual = (colorActual + 1) % colores.length;
+        circulo.style.background = colores[colorActual];
+    }
+    // Mover el círculo al punto (centrado)
+    function moverCirculo(x, y) {
+        const container = document.getElementById('container');
+        const containerRect = container.getBoundingClientRect();
+        const circuloRect = circulo.getBoundingClientRect();
+        const mitadAncho = circuloRect.width / 2;
+
+        const mitadAlto = circuloRect.height / 2;
+        const offsetTop = containerRect.top + window.scrollY;
+        const offsetLeft = containerRect.left + window.scrollX;
+        circulo.style.left = (x - offsetLeft - mitadAncho) + 'px';
+        circulo.style.top = (y - offsetTop - mitadAlto) + 'px';
+    }
+    // Touch Events
+    circulo.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        cambiarColor();
+        arrastrando = true;
+    });
+    document.addEventListener('touchmove', (e) => {
+        if (!arrastrando) return;
+        const touch = e.touches[0];
+        moverCirculo(touch.pageX, touch.pageY);
+    });
+    document.addEventListener('touchend', () => {
+        arrastrando = false;
+    });
+    // Mouse Events
+    circulo.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        cambiarColor();
+        arrastrando = true;
+    });
+    document.addEventListener('mousemove', (e) => {
+        if (!arrastrando) return;
+        moverCirculo(e.clientX, e.clientY);
+    });
+    document.addEventListener('mouseup', () => {
+        arrastrando = false;
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model - DOM</title>
+</head>
+<body>
+    <div style="margin-top:20px;">
+        <button id="botonAnimado" style="padding:10px 20px; font-size:18px; transition: all 0.3s;">¡Tócame o pasa el mouse!</button>
+    </div>
+</body>
+<script>
+    //Botón que crece con eventos
+    const boton = document.getElementById('botonAnimado');
+    
+    // Aumentar tamaño
+    function agrandar() {
+        boton.style.transform = 'scale(1.5)';
+    }
+
+    // Volver a tamaño normal
+    function normalizar() {
+    boton.style.transform = 'scale(1)';
+    }
+
+    // Mouse events
+    boton.addEventListener('mouseover', agrandar);
+    boton.addEventListener('mouseout', normalizar);
+
+    // Touch events
+    boton.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        agrandar();
+    });
+    boton.addEventListener('touchend', normalizar);
+</script>
+</html>

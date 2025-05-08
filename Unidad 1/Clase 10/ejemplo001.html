@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model - DOM</title>
+
+</head>
+<body>
+    <div id="caja" style="width:200px; height:200px; background:lightgray;"></div>
+    <div id="areaTouch" style="width:200px; height:200px; background:skyblue;"></div>
+</body>
+<script>
+    //Caja que cambia de color
+    const caja = document.getElementById('caja');
+    caja.addEventListener('mouseover', () => caja.style.background = 'yellow');
+    caja.addEventListener('mouseout', () => caja.style.background = 'lightgray');
+    caja.addEventListener('click', () => alert('¡Click!'));
+        
+    const area = document.getElementById('areaTouch');
+    area.addEventListener('touchstart', () => {
+        area.style.background = 'deepskyblue';
+        console.log('Touch iniciado');
+    });
+    area.addEventListener('touchend', () => {
+        area.style.background = 'skyblue';
+        console.log('Touch finalizado');
+    });
+</script>
+</html>
