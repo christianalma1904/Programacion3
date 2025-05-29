@@ -1,24 +1,35 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const { initDB } = require('./db');
+const db = require('./db');
 
-const postRoutes = require('./src/routes/postRoutes');
-const commentRoutes = require('./src/routes/commentRoutes');
+const postRoutes = require('./src/routers/postRoutes');
+const commentRoutes = require('./src/routers/commentRoutes');
 
 async function main() {
-  const db = await initDB();
-  const app = express();
-  app.use(cors());
-  app.use(express.json());
+  try {
+    const app = express();
 
-  app.use((req, res, next) => { req.db = db; next(); });
+    app.use(cors());
+    app.use(express.json());
 
-  app.use('/posts', postRoutes);
-  app.use('/comments', commentRoutes);
+    // Pasa el objeto db con query() a cada request
+    app.use((req, res, next) => {
+      req.db = db;
+      next();
+    });
 
-  const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    app.use('/posts', postRoutes);
+    app.use('/comments', commentRoutes);
+
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+      console.log(`✅ Server running on port ${PORT}`);
+    });
+
+  } catch (error) {
+    console.error('❌ Error al iniciar el servidor:', error);
+  }
 }
 
 main();
